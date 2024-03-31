@@ -46,7 +46,7 @@
 - In `challenge2`, create a `Dockerfile` for your Node.js app.
 - Use the Node.js image from Docker Hub.
   
-### Step 4: Configure Docker Compose
+### Step 3: Configure Docker Compose
 
 - Write a `docker-compose.yml` file.
 - Define services for your app and NGINX.
@@ -103,13 +103,13 @@ http {
 ```
 
 
-### Step 5: Build and Start Your Services  
+### Step 4: Build and Start Your Services  
 
 - Navgate to `challenge2` directory with `cd` in terminal.
 - Run `docker-compose up` to start your multi-container application.
 - You might get an error here. This is due to the fact that the container in challenge1 is still using port 8080. In your docker desktop; stop the `challenge1` container.
 
-### Step 6: Verify Your Dynamic Application
+### Step 5: Verify Your Dynamic Application
 
 - Open a browser and navigate to http://localhost:8080/api/books and http://localhost:8080/api/books/1
 - Confirm you can access the Node.js app through NGINX. You should be able to read the .JSON files on this page, displaying books.
