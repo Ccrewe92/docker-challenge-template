@@ -1,13 +1,20 @@
+# Use the official Node.js base image from Docker Hub
 FROM node:latest
 
-WORKDIR /usr/src/app
+# Set the working directory inside the container to /app
+WORKDIR /app
 
+# Copy package.json and package-lock.json (or yarn.lock) to the container
 COPY package*.json ./
 
+# Install app dependencies inside the container
 RUN npm install
 
+# Bundle app source by copying all files from your project folder to the container
 COPY . .
 
-EXPOSE 8080
+# Your app binds to port 3000, so you'll use the EXPOSE instruction
+EXPOSE 3000
 
-CMD ["npm", "start"]
+# The command to run your app
+CMD ["node", "server.js"]
