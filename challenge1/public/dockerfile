@@ -1,0 +1,8 @@
+# This will use the official NGINX image as a parent image
+FROM nginx:latest
+
+# Copy the contents of the public folder into the container
+COPY ./public /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
