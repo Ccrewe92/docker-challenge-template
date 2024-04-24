@@ -185,11 +185,49 @@ docker-compose up -d --build
 docker-compose ps
 ```
 
+## Challenge 4: Scaling up Node Services.
+
+### Step 1: Setting up challenge 4  
+
+- Create a directory named challenge4.
+- Copy all the contents of challenge3 into this directory.
+
+### Step 2: Editing the compose.yml  
+
+- Since we are making multiple node services, we will have to go into the new docker-compose.yml that we copies in the challenge 4 directory and remove the ports.
+
+  ```
+  Delete this
+  ports:
+      - "3000:3000"
+  ```
+
+### Step 3: Create multiple Nodes.  
+
+- run this command to create more nodes.
+  
+```
+docker-compose up -d --scale node-service=3
+```
+
+### Step 4: Verify the scaling of nodes.
+
+- Run this command.
+
+```
+docker-compose up -d --scale node-service=3
+```
+### Step 5: Check your local host.  
+
+- http://localhost:8080/api/stats
+- You should see the info for your node service. Refreshing this page, the hostname should change showing you that you are cycling between the nodes.
+
 ## References
 
 - [Official Docker documentation](https://docs.docker.com/)
 - [NGINX Documentation](http://nginx.org/en/docs/)
-
+- [Docker Env](https://docs.docker.com/compose/environment-variables/)
+  
 ## Screenshots
 
 ![challenge1-localhost](https://github.com/Ccrewe92/docker-challenge-template/assets/119900792/58df2163-d9f2-4c4e-88d1-035d2e393958)
@@ -197,4 +235,9 @@ docker-compose ps
 ![challenge2-terminal](https://github.com/Ccrewe92/docker-challenge-template/assets/119900792/b01301db-add7-44c1-a495-28f5c66e3135)
 ![challenge2-book-1](https://github.com/Ccrewe92/docker-challenge-template/assets/119900792/34fe9b44-6b7c-48f5-8755-30530329ed36)
 ![image](https://github.com/Ccrewe92/docker-challenge-template/assets/119900792/32f33fc7-8600-43bd-815c-9a1857323780)
-
+![Screenshot 2024-04-24 141603](https://github.com/Ccrewe92/docker-challenge-template/assets/119900792/869d0b65-e0c7-41a0-b679-e455c85e924c)
+![Screenshot 2024-04-24 141535](https://github.com/Ccrewe92/docker-challenge-template/assets/119900792/4a5cccbb-26cc-4ebf-b5be-e2e37bb3c734)
+![Screenshot 2024-04-24 141530](https://github.com/Ccrewe92/docker-challenge-template/assets/119900792/56b35814-340b-460e-a5dd-9d68d46ea00b)
+![Screenshot 2024-04-24 1421242](https://github.com/Ccrewe92/docker-challenge-template/assets/119900792/e4c2f552-e41f-43a3-9de7-4098967726d8)
+![Screenshot 2024-04-24 142152](https://github.com/Ccrewe92/docker-challenge-template/assets/119900792/fc985032-ea4e-42d3-b972-c99c7cd86cc1)
+![Screenshot 2024-04-24 1421523](https://github.com/Ccrewe92/docker-challenge-template/assets/119900792/e2d7be0f-aa60-4460-b9c6-93e4adc24f88)
