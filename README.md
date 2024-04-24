@@ -114,6 +114,77 @@ http {
 - Open a browser and navigate to http://localhost:8080/api/books and http://localhost:8080/api/books/1
 - Confirm you can access the Node.js app through NGINX. You should be able to read the .JSON files on this page, displaying books.
 
+## Challenge 3:
+
+### Step 1: Set Up the Environment
+
+- Create a directory named challenge3.
+- Unzip the contents of challenge3.zip into this directory.
+  
+## Step 2: Set Up the Environment  
+
+- Inside the challenge3 directory, create an .env file.
+- Define the necessary environment variables for your services, such as database credentials and Node.js environment settings.
+
+```
+DB_PASSWORD=example  
+DB_USER=example_user  
+DB_DATABASE=myapp  
+DB_HOST=db  
+MYSQL_ROOT_PASSWORD=example  
+MYSQL_DATABASE=myapp  
+MYSQL_USER=example_user  
+MYSQL_PASSWORD=example  
+NODE_ENV=production  
+```
+
+## Step 3: Write the docker-compose.yml File  
+
+- In the challenge3 directory, create a docker-compose.yml file.
+- Define the services: node-service, db, and nginx.
+
+```
+version: '3.8'
+services:
+  node-service:
+    build: ./api
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DATABASE=${DB_DATABASE}
+      - NODE_ENV=${NODE_ENV}
+  db:
+    image: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+  nginx:
+    build: ./nginx
+    ports:
+      - "8080:80"
+```
+
+## Step 4: Build and Run Your Application
+
+- Open a terminal or command prompt.
+- Navigate to the challenge3 directory.
+- Run the following commands to start your multi-container Docker application:
+```
+docker-compose up -d --build
+```
+
+## Step 5: Validate the Application
+
+- In your browser, navigate to http://localhost:8080/api/books abd books/1 to verify that you can access the application.  
+
+- To check the running services, use:
+```
+docker-compose ps
+```
+
 ## References
 
 - [Official Docker documentation](https://docs.docker.com/)
