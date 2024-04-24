@@ -25,8 +25,10 @@ services:
       DB_USERNAME: ${DB_USERNAME}
       DB_PASSWORD: ${DB_PASSWORD}
       DB_DATABASE: ${DB_DATABASE}
-    ports:
-      - "3000:3000"
+
+    #Remove the ports so we can run multiple node-services.
+    #ports:
+    # - "3000:3000"
     depends_on:
       - db
 
