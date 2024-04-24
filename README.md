@@ -124,7 +124,7 @@ http {
 ## Step 2: Set Up the Environment  
 
 - Inside the challenge3 directory, create an .env file.
-- Define the necessary environment variables for your services, such as database credentials and Node.js environment settings.
+- Here we will define the necessaty enviroemtnal variable for our services. Change the string after the = sign to your liking, ex: reallygoodpassword123
 
 ```
 DB_PASSWORD=example  
