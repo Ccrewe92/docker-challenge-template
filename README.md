@@ -240,4 +240,5 @@ docker-compose up -d --scale node-service=3
 ![Screenshot 2024-04-24 141530](https://github.com/Ccrewe92/docker-challenge-template/assets/119900792/56b35814-340b-460e-a5dd-9d68d46ea00b)
 ![Screenshot 2024-04-24 1421242](https://github.com/Ccrewe92/docker-challenge-template/assets/119900792/e4c2f552-e41f-43a3-9de7-4098967726d8)
 ![Screenshot 2024-04-24 142152](https://github.com/Ccrewe92/docker-challenge-template/assets/119900792/fc985032-ea4e-42d3-b972-c99c7cd86cc1)
-![Screenshot 2024-04-24 1421523](https://github.com/Ccrewe92/docker-challenge-template/assets/119900792/e2d7be0f-aa60-4460-b9c6-93e4adc24f88)
+![image](https://github.com/Ccrewe92/docker-challenge-template/assets/119900792/abddfec9-452c-47bc-9222-5429a20c3ebb)
+
