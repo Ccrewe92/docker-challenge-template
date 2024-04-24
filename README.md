@@ -116,7 +116,7 @@ http {
 
 ## Challenge 3:
 
-### Step 1: Set Up the Environment
+### Step 1: Creating the directory
 
 - Create a directory named challenge3.
 - Unzip the contents of challenge3.zip into this directory.
